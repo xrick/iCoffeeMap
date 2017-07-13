@@ -11,16 +11,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Food Pin-->
+        <!--iCoffeeMap-->
         <scene sceneID="4QP-Dl-EqO">
             <objects>
-                <tableViewController id="O60-dr-744" customClass="RestaurantTableViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="O60-dr-744" customClass="RestaurantTableViewController" customModule="iCoffeeMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="qvs-hr-PK6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell1" rowHeight="80" id="7E6-DT-YJw" customClass="RestaurantTableViewCell" customModule="FoodPin" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell1" rowHeight="80" id="7E6-DT-YJw" customClass="RestaurantTableViewCell" customModule="iCoffeeMap" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7E6-DT-YJw" id="6zh-KM-lQ9">
@@ -89,7 +89,7 @@
                             <outlet property="delegate" destination="O60-dr-744" id="9df-c4-hFY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Food Pin" id="pn4-Zb-Dsl">
+                    <navigationItem key="navigationItem" title="iCoffeeMap" id="pn4-Zb-Dsl">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jyk-sw-d82">
                             <connections>
                                 <segue destination="zc4-sn-JDD" kind="presentation" identifier="addRestaurant" id="3YL-0s-XDk"/>
@@ -104,7 +104,7 @@
         <!--Restaurant Detail View Controller-->
         <scene sceneID="mRW-vm-G7O">
             <objects>
-                <viewController id="NyW-WO-8z7" customClass="RestaurantDetailViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NyW-WO-8z7" customClass="RestaurantDetailViewController" customModule="iCoffeeMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KUF-bs-uqx"/>
                         <viewControllerLayoutGuide type="bottom" id="7Km-01-IPG"/>
@@ -122,7 +122,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="36" id="XHW-WB-PgH" customClass="RestaurantDetailTableViewCell" customModule="FoodPin" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="36" id="XHW-WB-PgH" customClass="RestaurantDetailTableViewCell" customModule="iCoffeeMap" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="328" width="375" height="36"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XHW-WB-PgH" id="Zbf-Fl-GLE">
@@ -200,7 +200,7 @@
         <!--Review View Controller-->
         <scene sceneID="QAX-3j-Uji">
             <objects>
-                <viewController id="GzI-dt-qlZ" customClass="ReviewViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GzI-dt-qlZ" customClass="ReviewViewController" customModule="iCoffeeMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="da7-lo-hxU"/>
                         <viewControllerLayoutGuide type="bottom" id="CGx-mx-SkP"/>
@@ -327,7 +327,7 @@
         <!--Map View Controller-->
         <scene sceneID="ont-G0-rKS">
             <objects>
-                <viewController id="I7V-3k-G27" customClass="MapViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="I7V-3k-G27" customClass="MapViewController" customModule="iCoffeeMap" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bgT-TO-fHJ"/>
                         <viewControllerLayoutGuide type="bottom" id="9jx-fS-zZf"/>
@@ -359,10 +359,10 @@
             </objects>
             <point key="canvasLocation" x="1722" y="771"/>
         </scene>
-        <!--New Restraurant-->
+        <!--New Coffee Shop-->
         <scene sceneID="mxW-8J-Ah0">
             <objects>
-                <tableViewController id="oYh-aG-MTE" customClass="AddRestaurantController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="oYh-aG-MTE" customClass="AddRestaurantController" customModule="iCoffeeMap" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="h8i-d7-PCg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -374,7 +374,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zgu-NQ-OHQ" id="fvk-o4-ZCI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="249.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photoalbum" translatesAutoresizingMaskIntoConstraints="NO" id="LvH-DD-ReZ">
@@ -397,7 +397,7 @@
                                         <rect key="frame" x="0.0" y="250" width="375" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="80p-oY-EFL" id="CuK-QO-jyu">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="71.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qJ-jZ-atS">
@@ -431,7 +431,7 @@
                                         <rect key="frame" x="0.0" y="322" width="375" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f4S-B9-Ajg" id="8Y4-pS-LAx">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="71.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTm-RE-Z9A">
@@ -464,7 +464,7 @@
                                         <rect key="frame" x="0.0" y="394" width="375" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6zk-ed-sIT" id="Cch-da-jXB">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="71.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6KJ-a2-5UD">
@@ -497,7 +497,7 @@
                                         <rect key="frame" x="0.0" y="466" width="375" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EVr-aN-8Dh" id="Eff-1e-NJg">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="71.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have You Been Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vju-wS-ney">
@@ -548,13 +548,16 @@
                             <outlet property="delegate" destination="oYh-aG-MTE" id="mgs-F9-4GU"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="New Restraurant" id="oao-p1-wgg">
+                    <navigationItem key="navigationItem" title="New Coffee Shop" id="oao-p1-wgg">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Ea0-ix-lhW">
                             <connections>
                                 <segue destination="Khc-Hd-0Yq" kind="unwind" unwindAction="unwindToHomeScreenWithSegue:" id="8Zl-8e-TWN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="photoImageView" destination="LvH-DD-ReZ" id="gbb-Ex-jbw"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1h0-PS-riu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Khc-Hd-0Yq" userLabel="Exit" sceneMemberID="exit"/>
@@ -584,7 +587,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zc4-sn-JDD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="xZR-f2-FIy">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xZR-f2-FIy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
