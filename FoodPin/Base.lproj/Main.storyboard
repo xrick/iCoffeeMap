@@ -518,6 +518,9 @@
                                                     <state key="normal" title="Yes">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="toggleButtonColorChangeWithSender:" destination="oYh-aG-MTE" eventType="touchDown" id="iO0-w4-nnd"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1q-aM-kzx">
                                                     <rect key="frame" x="96" y="29" width="46" height="30"/>
@@ -528,6 +531,9 @@
                                                     <state key="normal" title="No">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="toggleButtonColorChangeWithSender:" destination="oYh-aG-MTE" eventType="touchDown" id="jiQ-y9-4Xn"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -554,9 +560,20 @@
                                 <segue destination="Khc-Hd-0Yq" kind="unwind" unwindAction="unwindToHomeScreenWithSegue:" id="8Zl-8e-TWN"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="NdE-rw-Vgh">
+                            <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="Khc-Hd-0Yq" kind="unwind" unwindAction="unwindToHomeScreenWithSegue:" id="ZAw-Cn-Apl"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="locationTextField" destination="gSt-MJ-Ixa" id="KtE-mz-xE9"/>
+                        <outlet property="nameTextField" destination="9Gy-SQ-fsU" id="bgc-B7-2kv"/>
+                        <outlet property="noButton" destination="U1q-aM-kzx" id="zfk-RZ-SBA"/>
                         <outlet property="photoImageView" destination="LvH-DD-ReZ" id="gbb-Ex-jbw"/>
+                        <outlet property="typeTextField" destination="C9V-ct-GGW" id="hwb-gI-zHx"/>
+                        <outlet property="yesButton" destination="aLR-8H-FXV" id="Ifv-qb-kbs"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1h0-PS-riu" userLabel="First Responder" sceneMemberID="firstResponder"/>

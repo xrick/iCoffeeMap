@@ -11,6 +11,25 @@ import UIKit
 class AddRestaurantController: UITableViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     @IBOutlet var photoImageView : UIImageView!
+    
+    @IBOutlet var nameTextField:UITextField!
+    @IBOutlet var typeTextField:UITextField!
+    @IBOutlet var locationTextField:UITextField!
+    @IBOutlet var yesButton:UIButton!
+    @IBOutlet var noButton:UIButton!
+    
+    
+    @IBAction func toggleButtonColorChange(sender : UIButton)
+    {
+        if sender == yesButton
+        {
+            
+        }
+        else if sender == noButton
+        {
+            
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,7 +72,8 @@ class AddRestaurantController: UITableViewController,UIImagePickerControllerDele
     
     //MARK: UIImagePicker
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
+    {
         if let selectedImg = info[UIImagePickerControllerOriginalImage] as? UIImage{
             photoImageView.image = selectedImg
             photoImageView.contentMode = .scaleAspectFill
@@ -73,6 +93,12 @@ class AddRestaurantController: UITableViewController,UIImagePickerControllerDele
 
             dismiss(animated: true, completion: nil)
         }
+        
+        func unwindToHomeScreen(segue:UIStoryboardSegue){
+            
+        }
+        
+        
     }
 
 }
