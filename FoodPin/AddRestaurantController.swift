@@ -27,9 +27,20 @@ class AddRestaurantController: UITableViewController {
 
     // MARK: - Table view data source
     
-   // override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    //}
+    
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+                let imgCtrl = UIImagePickerController()
+                imgCtrl.allowsEditing = false
+                imgCtrl.sourceType = .photoLibrary
+                
+                present(imgCtrl, animated: true, completion: nil)
+            }
+        }
+    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

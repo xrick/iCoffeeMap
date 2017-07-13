@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F4D336BD1D2E4309003010DD"
-               BuildableName = "FoodPin.app"
-               BlueprintName = "FoodPin"
-               ReferencedContainer = "container:FoodPin.xcodeproj">
+               BuildableName = "iCoffeeMap.app"
+               BlueprintName = "iCoffeeMap"
+               ReferencedContainer = "container:iCoffeeMap.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F4D336BD1D2E4309003010DD"
-            BuildableName = "FoodPin.app"
-            BlueprintName = "FoodPin"
-            ReferencedContainer = "container:FoodPin.xcodeproj">
+            BuildableName = "iCoffeeMap.app"
+            BlueprintName = "iCoffeeMap"
+            ReferencedContainer = "container:iCoffeeMap.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F4D336BD1D2E4309003010DD"
-            BuildableName = "FoodPin.app"
-            BlueprintName = "FoodPin"
-            ReferencedContainer = "container:FoodPin.xcodeproj">
+            BuildableName = "iCoffeeMap.app"
+            BlueprintName = "iCoffeeMap"
+            ReferencedContainer = "container:iCoffeeMap.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F4D336BD1D2E4309003010DD"
-            BuildableName = "FoodPin.app"
-            BlueprintName = "FoodPin"
-            ReferencedContainer = "container:FoodPin.xcodeproj">
+            BuildableName = "iCoffeeMap.app"
+            BlueprintName = "iCoffeeMap"
+            ReferencedContainer = "container:iCoffeeMap.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
