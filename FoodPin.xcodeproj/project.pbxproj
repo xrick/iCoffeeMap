@@ -124,9 +124,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F4D336BD1D2E4309003010DD /* iCoffeeMap */ = {
+		F4D336BD1D2E4309003010DD /* FoodPin */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F4D336D01D2E4309003010DD /* Build configuration list for PBXNativeTarget "iCoffeeMap" */;
+			buildConfigurationList = F4D336D01D2E4309003010DD /* Build configuration list for PBXNativeTarget "FoodPin" */;
 			buildPhases = (
 				F4D336BA1D2E4309003010DD /* Sources */,
 				F4D336BB1D2E4309003010DD /* Frameworks */,
@@ -136,7 +136,7 @@
 			);
 			dependencies = (
 			);
-			name = iCoffeeMap;
+			name = FoodPin;
 			productName = FoodPin;
 			productReference = F4D336BE1D2E4309003010DD /* iCoffeeMap.app */;
 			productType = "com.apple.product-type.application";
@@ -163,7 +163,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F4D336B91D2E4309003010DD /* Build configuration list for PBXProject "iCoffeeMap" */;
+			buildConfigurationList = F4D336B91D2E4309003010DD /* Build configuration list for PBXProject "FoodPin" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -176,7 +176,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F4D336BD1D2E4309003010DD /* iCoffeeMap */,
+				F4D336BD1D2E4309003010DD /* FoodPin */,
 			);
 		};
 /* End PBXProject section */
@@ -328,7 +328,7 @@
 				INFOPLIST_FILE = FoodPin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SweTech.-";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iCoffeeMap;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -341,7 +341,7 @@
 				INFOPLIST_FILE = FoodPin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SweTech.-";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = iCoffeeMap;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -349,7 +349,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F4D336B91D2E4309003010DD /* Build configuration list for PBXProject "iCoffeeMap" */ = {
+		F4D336B91D2E4309003010DD /* Build configuration list for PBXProject "FoodPin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F4D336CE1D2E4309003010DD /* Debug */,
@@ -358,7 +358,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F4D336D01D2E4309003010DD /* Build configuration list for PBXNativeTarget "iCoffeeMap" */ = {
+		F4D336D01D2E4309003010DD /* Build configuration list for PBXNativeTarget "FoodPin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F4D336D11D2E4309003010DD /* Debug */,
