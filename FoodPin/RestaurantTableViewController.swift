@@ -137,13 +137,25 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         })
         
         // Delete button
+        /*
         let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Delete",handler: { (action, indexPath) -> Void in
             
             // Delete the row from the data source
             self.restaurants.remove(at: indexPath.row)
             
             self.tableView.deleteRows(at: [indexPath], with: .fade)
+        */
+        let deleteAction = UITableViewRowAction(style: .default, title: "Delete", handler: {(action,indexPath) -> Void in
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+                let context = appDelegate.persistentContainer.viewContext
+                let restaruantToDelete = self.fetchResultController.object(at: indexPath)
+                context.delete(restaruantToDelete)
+                appDelegate.saveContext()
+            }
+            
+        
         })
+      
         
         shareAction.backgroundColor = UIColor(red: 48.0/255.0, green: 173.0/255.0, blue: 99.0/255.0, alpha: 1.0)
         deleteAction.backgroundColor = UIColor(red: 202.0/255.0, green: 202.0/255.0, blue: 203.0/255.0, alpha: 1.0)
@@ -168,6 +180,37 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     }
     
     //mark : NSFetchedResultsControllerDelegate Stack
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
     
+    // if the controller did some change then we need to update the tableview content
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type{
+        case .insert:
+            if let newIndexPath = newIndexPath{
+                self.tableView.insertRows(at: [newIndexPath], with: .fade)
+            }
+        case .delete:
+            if let indexPath = indexPath{
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        case .update:
+            if let indexPath = indexPath{
+                self.tableView.reloadRows(at: [indexPath], with: .fade)
+            }
+        default:
+            self.tableView.reloadData()
+        }
+        
+        if let fetchedObjects = controller.fetchedObjects{
+            restaurants = fetchedObjects as! [CoffeeShopMO]
+        }
+    }
+    
+    //if the controller has done the change then the tableview also endupdate
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
     
 }

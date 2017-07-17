@@ -109,6 +109,10 @@ class RestaurantDetailViewController: UIViewController, UITableViewDelegate,UITa
             }
         }
         
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+            appDelegate.saveContext()
+        }
+        
         tableView.reloadData()
     }
 
