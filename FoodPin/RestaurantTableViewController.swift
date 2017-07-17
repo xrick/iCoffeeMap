@@ -7,10 +7,11 @@
 //
 
 import UIKit
-
-class RestaurantTableViewController: UITableViewController {
+import CoreData
+class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     var restaurants:[CoffeeShopMO] = []
+    var fetchResultController : NSFetchedResultsController<CoffeeShopMO>!
         /*[
         Restaurant(name: "Cafe Deadend", type: "Coffee & Tea Shop", location: "G/F, 72 Po Hing Fong, Sheung Wan, Hong Kong", phone: "232-923423", image: "cafedeadend.jpg", isVisited: false),
         Restaurant(name: "Homei", type: "Cafe", location: "Shop B, G/F, 22-24A Tai Ping San Street SOHO, Sheung Wan, Hong Kong", phone: "348-233423", image: "homei.jpg", isVisited: false),
@@ -49,6 +50,28 @@ class RestaurantTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        //get data from data storage : xrickliao
+        let fetchRequest : NSFetchRequest<CoffeeShopMO> = CoffeeShopMO.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+            let context = appDelegate.persistentContainer.viewContext
+            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            fetchResultController.delegate = self
+        }
+        
+        do
+        {
+            try fetchResultController.performFetch()
+            if let fetchedObjects = fetchResultController.fetchedObjects
+            {
+                restaurants = fetchedObjects
+            }
+        }catch
+        {
+            print(Error.self)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -143,4 +166,8 @@ class RestaurantTableViewController: UITableViewController {
     @IBAction func unwindToHomeScreen(segue:UIStoryboardSegue){
         
     }
+    
+    //mark : NSFetchedResultsControllerDelegate Stack
+    
+    
 }
