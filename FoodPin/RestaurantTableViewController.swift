@@ -10,7 +10,8 @@ import UIKit
 
 class RestaurantTableViewController: UITableViewController {
 
-    var restaurants:[Restaurant] = [
+    var restaurants:[CoffeeShopMO] = []
+        /*[
         Restaurant(name: "Cafe Deadend", type: "Coffee & Tea Shop", location: "G/F, 72 Po Hing Fong, Sheung Wan, Hong Kong", phone: "232-923423", image: "cafedeadend.jpg", isVisited: false),
         Restaurant(name: "Homei", type: "Cafe", location: "Shop B, G/F, 22-24A Tai Ping San Street SOHO, Sheung Wan, Hong Kong", phone: "348-233423", image: "homei.jpg", isVisited: false),
         Restaurant(name: "Teakha", type: "Tea House", location: "Shop B, 18 Tai Ping Shan Road SOHO, Sheung Wan, Hong Kong", phone: "354-243523", image: "teakha.jpg", isVisited: false),
@@ -32,7 +33,7 @@ class RestaurantTableViewController: UITableViewController {
         Restaurant(name: "Donostia", type: "Spanish", location: "10 Seymour Place London W1H 7ND United Kingdom", phone: "722-232323", image: "donostia.jpg", isVisited: false),
         Restaurant(name: "Royal Oak", type: "British", location: "2 Regency Street London SW1P 4BZ United Kingdom", phone: "343-988834", image: "royaloak.jpg", isVisited: false),
         Restaurant(name: "CASK Pub and Kitchen", type: "Thai", location: "22 Charlwood Street London SW1V 2DY Pimlico", phone: "432-344050", image: "caskpubkitchen.jpg", isVisited: false)
-    ]
+    ]*/
     
     
     override func viewDidLoad() {
@@ -78,7 +79,8 @@ class RestaurantTableViewController: UITableViewController {
         
         // Configure the cell...
         cell.nameLabel.text = restaurants[indexPath.row].name
-        cell.thumbnailImageView.image = UIImage(named: restaurants[indexPath.row].image)
+        //cell.thumbnailImageView.image = UIImage(named: restaurants[indexPath.row].image)
+        cell.thumbnailImageView.image = UIImage(data: restaurants[indexPath.row].image as! Data)
         cell.locationLabel.text = restaurants[indexPath.row].location
         cell.typeLabel.text = restaurants[indexPath.row].type
 
@@ -103,9 +105,9 @@ class RestaurantTableViewController: UITableViewController {
         // Social Sharing Button
         let shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Share", handler: { (action, indexPath) -> Void in
             
-            let defaultText = "Just checking in at " + self.restaurants[indexPath.row].name
+            let defaultText = "Just checking in at " + self.restaurants[indexPath.row].name!
             
-            if let imageToShare = UIImage(named: self.restaurants[indexPath.row].image) {
+            if let imageToShare = UIImage(data: self.restaurants[indexPath.row].image as! Data) {
                 let activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
                 self.present(activityController, animated: true, completion: nil)
             }

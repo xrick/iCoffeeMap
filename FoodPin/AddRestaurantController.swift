@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddRestaurantController: UITableViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
@@ -18,16 +19,22 @@ class AddRestaurantController: UITableViewController,UIImagePickerControllerDele
     @IBOutlet var yesButton:UIButton!
     @IBOutlet var noButton:UIButton!
     
+    var restaurant : CoffeeShopMO!
+    var isVisited : Bool?
     
     @IBAction func toggleButtonColorChange(sender : UIButton)
     {
         if sender == yesButton
         {
-            
+            isVisited = true
+            yesButton.backgroundColor = UIColor.red
+            noButton.backgroundColor = UIColor.gray
         }
         else if sender == noButton
         {
-            
+            isVisited = false
+            yesButton.backgroundColor = UIColor.gray
+            noButton.backgroundColor = UIColor.red
         }
     }
 
@@ -74,7 +81,8 @@ class AddRestaurantController: UITableViewController,UIImagePickerControllerDele
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
     {
-        if let selectedImg = info[UIImagePickerControllerOriginalImage] as? UIImage{
+        if let selectedImg = info[UIImagePickerControllerOriginalImage] as? UIImage
+        {
             photoImageView.image = selectedImg
             photoImageView.contentMode = .scaleAspectFill
             photoImageView.clipsToBounds = true
@@ -94,11 +102,39 @@ class AddRestaurantController: UITableViewController,UIImagePickerControllerDele
             dismiss(animated: true, completion: nil)
         }
         
-        func unwindToHomeScreen(segue:UIStoryboardSegue){
+    }
+    @IBAction func unwindToHomeScreen(segue:UIStoryboardSegue)
+    {
+        
+    }
+    
+    @IBAction func toggleBeenHereButton(sender : UIButton)
+    {
+        if sender == yesButton
+        {
             
         }
-        
-        
+    }
+    
+    //core data save
+    @IBAction func save()
+    {
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+            restaurant = CoffeeShopMO(context: appDelegate.persistentContainer.viewContext)
+            restaurant.name = nameTextField.text
+            restaurant.type = typeTextField.text
+            restaurant.location = locationTextField.text
+            restaurant.isVisited = isVisited!
+            
+            if let restaurantImage = photoImageView.image{
+                if let imageData = UIImagePNGRepresentation(restaurantImage){
+                    restaurant.image = NSData(data:imageData)
+                }
+            }
+            print("Saving data to context....")
+            appDelegate.saveContext()
+        }
+        dismiss(animated: true, completion: nil)
     }
 
 }

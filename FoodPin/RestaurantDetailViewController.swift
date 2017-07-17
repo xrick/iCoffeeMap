@@ -16,11 +16,11 @@ class RestaurantDetailViewController: UIViewController, UITableViewDelegate,UITa
     @IBOutlet var tableView : UITableView!
     var mapView : MKMapView!
     
-    var restaurant:Restaurant!
+    var restaurant:CoffeeShopMO!//Restaurant!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        restaurantImageView.image = UIImage(named: restaurant.image)
+        restaurantImageView.image = UIImage(data: restaurant.image as! Data)
         self.tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
         self.tableView.separatorColor = UIColor(red: 240.0/255, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.8)
@@ -35,7 +35,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDelegate,UITa
         
         self.mapView.addGestureRecognizer(tapGestureRecognizer)
         
-        setMapViewAnnotation(self.mapView, _location: restaurant.location, _animated: true)
+        setMapViewAnnotation(self.mapView, _location: restaurant.location!, _animated: true)
         
         self.tableView.tableFooterView = self.mapView
         
@@ -49,7 +49,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDelegate,UITa
     {
         // set geo data
         let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString(_location, completionHandler: {
+        geoCoder.geocodeAddressString(restaurant.location!, completionHandler: {
             placemarks, error in
             if error != nil{
                 print(error)
