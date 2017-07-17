@@ -3,8 +3,22 @@
 //  FoodPin
 //
 //  Created by Liao Jiue-Ren on 11/06/2017.
-//  Copyright © 2017 AppCoda. All rights reserved.
+//  Copyright © 2017 SweTech. All rights reserved.
 //
+/*
+ In viewDidLoad
+ 
+ UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+ 
+ [self.view addGestureRecognizer:tap];
+ 
+ In dismissKeyboard:
+ 
+ -(void)dismissKeyboard
+ {
+ [aTextField resignFirstResponder];
+ }
+*/
 
 import UIKit
 import CoreData
@@ -40,12 +54,22 @@ class AddRestaurantController: UITableViewController,UIImagePickerControllerDele
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tap : UITapGestureRecognizer
+        tap = UITapGestureRecognizer(target: self, action:#selector(dismissKeyboard(sender:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    func dismissKeyboard(sender : UITapGestureRecognizer)
+    {
+        self.view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
